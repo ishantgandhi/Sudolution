@@ -1,4 +1,5 @@
 board = []
+original_board = []
 for i in range(9):
     row = input(f"Enter row {i + 1} (use 0 for empty cells and don't space between the numbers): ")
     board.append([int(num) for num in row])
@@ -15,6 +16,7 @@ def board_disp(b):
             else:
                 print(str(b[i][j]) + ' ', end=" ") 
 
+original_board = board.copy()
 
 def solve(b):
     find = search_empty(b)
@@ -52,11 +54,28 @@ def check(b, n, p):
                 return False
     return True
 
+def result_disp(b,ob):
+    for i in range(9):
+        if i % 3 == 0 and i != 0:
+            print('- - - - - - - - - - - - - - - - ') 
+        for j in range(len(b[i])):
+            if j % 3 == 0 and j != 0:
+                print(" | ", end=" ") 
+            if j == 8:
+                if b[i][j] != ob[i][j]:
+                    print(f"\033[92m{b[i][j]}\033[0m")
+                else:
+                    print(b[i][j]) 
+            else:
+                if b[i][j] != ob[i][j]:
+                    print(f"\033[92m{b[i][j]}\033[0m", end=" ")
+                else:
+                    print(str(b[i][j]) + ' ', end=" ") 
 
 print("Original board:")
 board_disp(board)
 solve(board)
 print("- -"*25)
 print("Solved board:")
-board_disp(board)
+result_disp(board,original_board)
 
