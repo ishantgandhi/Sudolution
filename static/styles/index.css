@@ -1,0 +1,24 @@
+.ny-times-sudoku-solver {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 19px;
+    right: 35px;
+    box-shadow: -3px 3px 0px #000;
+    border-radius: 20px;
+    background-color: #fec364;
+    border: 3px solid #000;
+    box-sizing: border-box;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
