@@ -1,32 +1,53 @@
-section{
-    height: 96vh;
-    padding-top: 4vh;
-    margin: 0 5rem;
-    box-sizing: border-box;
-    min-height: fit-content;
+section {
+  height: 96vh;
+  padding-top: 4vh;
+  margin: 0 5rem;
+  box-sizing: border-box;
+  min-height: fit-content;
 }
 
 .ny-times-sudoku-solver {
-    width: 59px;
-    height: 59px;
+  width: 59px;
+  height: 59px;
+  position: relative;
+  box-shadow: -3px 3px 0px #000;
+  border-radius: 20px;
+  background-color: #fec364;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.logo-container {
+  width: fit-content;
+  margin: auto;
+  transform: translate(0, 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rules-card {
+  width: 100%;
+  position: relative;
+  box-shadow: -6px 6px 0px #000;
+  border-radius: 20px;
+  background-color: #fb9b00;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  height: 85vh;
+}
+
+.solver-card{
+    width: 100%;
     position: relative;
-    box-shadow: -3px 3px 0px #000;
+    box-shadow: -6px 6px 0px #000;
     border-radius: 20px;
-    background-color: #fec364;
+    background-color: #fb9b00;
     border: 3px solid #000;
     box-sizing: border-box;
-    position: absolute;
-    top: 8px;
-    right: 16px;
+    height: 85vh;
 }
-
-.logo-container{
-    width: fit-content;
-    margin: auto;
-    transform: translate(0, 50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
