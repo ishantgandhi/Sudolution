@@ -11,18 +11,24 @@
     />
   </head>
   <body>
-    <button class="ny-times-sudoku-solver">Click me</button>
-    <div class="content">
-      <div class="logo-container">
-        <img
-          class="logo"
-          src="{{ url_for('static', filename = 'images/logo.png') }}"
-          alt="Sudolution Logo"
-        />
-        <div class="logo-text">
-          <div class="title">Sudolution</div>
+    <section class="landing-page">
+      <button class="ny-times-sudoku-solver">Logo</button>
+      <div class="content">
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="{{ url_for('static', filename = 'images/logo.png') }}"
+            alt="Sudolution Logo"
+          />
+          <div class="logo-text">
+            <div class="title">Sudolution</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+    <section class="sudoku-rules">
+    </section>
+    <section class="sudoku-solver">
+    </section>
   </body>
 </html>
