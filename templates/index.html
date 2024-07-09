@@ -26,13 +26,34 @@
               alt="Sudolution Logo"
             />
             <div class="logo-text">
-              <div class="title">Sudolution</div>
+              <div class="title"><h2 class="h2-title">Sudolution</h2></div>
             </div>
           </div>
         </div>
       </section>
       <section id="sudoku-rules" class="sudoku-rules">
-        <div class="rules-card"></div>
+        <div class="rules-card">
+          <div class="heading-container">
+            <div class="line"></div>
+            <h1 class="heading">Sudoku Rules</h1>
+            <div class="line"></div>
+          </div>
+          <div class="content-container">
+            <div class="text-card"></div>
+            <div class="image-card">
+              <div class="rules-image">
+                <img
+                  src="{{ url_for('static', filename = 'images/sudoku-rules.png') }}"
+                  alt="Sudoku Rules"
+                />
+              </div>
+              <div class="buttons-container">
+                <button class="left-button">Left</button>
+                <button class="right-button">Right</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="sudoku-solver" class="sudoku-solver">
         <div class="solver-card"></div>
