@@ -2,6 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.manrope-font {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "KarnakProB";
   src: url("/static/fonts/KarnakPro-Black.otf") format("opentype");
@@ -118,9 +125,9 @@ section {
   margin: 0;
 }
 
-.content-container{
+.content-container {
   display: flex;
-  margin:  15px 27px;
+  margin: 15px 27px;
   justify-content: space-between;
 }
 
@@ -133,20 +140,42 @@ section {
   border: 3px solid #000;
   box-sizing: border-box;
   height: 504px;
+  padding: 5px 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
 }
 
-.image-card{
+.text-card p {
+  margin: 10px 0;
+}
+
+.text-card strong {
+  font-weight: 700;
+  display: block;
+}
+.text-card ul {
+  margin: 10px 0;
+  padding-left: 40px; 
+}
+
+.text-card li {
+  margin-bottom: 5px;
+  padding-left: 10px; 
+}
+
+.image-card {
   display: flex;
   flex-direction: column;
 }
 
-.rules-image{
-  flex: .95;
+.rules-image {
+  flex: 0.95;
   width: 355px;
   height: 355px;
 }
 
-.buttons-container{
+.buttons-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
