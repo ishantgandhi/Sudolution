@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sudolution</title>
@@ -39,7 +45,18 @@
             <div class="line"></div>
           </div>
           <div class="content-container">
-            <div class="text-card"></div>
+            <div class="text-card">
+              <p><strong>Overall Structure:</strong></p>
+              <ul>
+                <li>A standard Sudoku grid is 9x9, containing 81 cells.</li>
+                <li>This grid is divided into nine 3x3 subgrids, often referred to as "boxes," "squares," or "regions."</li>
+              </ul>
+              <p><strong>Subgrid Identification:</strong></p>
+              <ul>
+                <li>The subgrids are typically numbered from 1 to 9 for reference, starting from the top-left corner and moving left to right, top to bottom.</li>
+                <li>For example, the top-left subgrid includes cells (1,1) to (3,3), while the center subgrid includes cells (4,4) to (6,6).</li>
+              </ul>
+            </div>            
             <div class="image-card">
               <div class="rules-image">
                 <img
