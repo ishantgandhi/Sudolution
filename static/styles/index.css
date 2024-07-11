@@ -156,12 +156,12 @@ section {
 }
 .text-card ul {
   margin: 10px 0;
-  padding-left: 40px; /* Increased indentation */
+  padding-left: 40px; 
 }
 
 .text-card li {
   margin-bottom: 5px;
-  padding-left: 10px; /* Added padding for further indentation */
+  padding-left: 10px; 
 }
 
 .image-card {
