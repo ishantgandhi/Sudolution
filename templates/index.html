@@ -846,7 +846,7 @@
               <button class="solve-button" onclick="submitBoard()">
                 Solve
               </button>
-              <button class="clear-button">Clear</button>
+              <button class="clear-button" onclick="clearBoard()">Clear</button>
             </div>
           </div>
           <div class="output-section">
@@ -857,6 +857,25 @@
     </div>
 
     <script>
+      function clearBoard() {
+        const outputSection = document.querySelector(".output-sudoku");
+        outputSection.classList.remove("visible");
+
+        setTimeout(() => {
+          outputSection.innerHTML = "";
+
+          const rows = document.querySelectorAll('tr[id^="row"]');
+          rows.forEach((row) => {
+            const inputs = row.querySelectorAll('input[class^="Input"]');
+            inputs.forEach((input) => {
+              input.value = "";
+            });
+          });
+
+          outputSection.classList.add("visible");
+        }, 300);
+      }
+
       function getInputValues() {
         const rows = document.querySelectorAll('tr[id^="row"]');
         const tableArray = Array.from(rows).map((row) => {
@@ -918,8 +937,8 @@
 
         outputSection.appendChild(table);
         setTimeout(() => {
-          outputSection.classList.add('visible');
-      }, 10);
+          outputSection.classList.add("visible");
+        }, 10);
       }
 
       const originalContent = `
