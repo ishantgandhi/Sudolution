@@ -306,3 +306,67 @@ input {
   justify-content: space-around;
   
 }
+
+.solver-card#opacity.active{
+  opacity: 0.5;
+}
+
+#how-popup{
+  width: 900px;
+  position: fixed;
+  box-shadow: -6px 6px 0px #000;
+  border-radius: 20px;
+  background-color: #fb9b00;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  height: 500px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#how-popup.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+
+}
+
+.how-text-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 45px;
+}
+
+.how-to-card{
+  width: 100%;
+  position: relative;
+  border-radius: 25px;
+  background-color: #ffd085;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  height: 326px;
+  padding: 0px 19px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  font-size: 21px;
+  margin: 10px 45px;
+}
+
+.cross-button{
+  width: 45px;
+  height: 45px;
+  box-shadow: -3px 3px 0px #000;
+  border-radius: 10px;
+  background-color: #fec364;
+  border: 3px solid #000;
+  box-sizing: border-box;
+}

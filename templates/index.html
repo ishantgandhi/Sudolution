@@ -87,7 +87,7 @@
         </div>
       </section>
       <section id="sudoku-solver" class="sudoku-solver">
-        <div class="solver-card">
+        <div class="solver-card" id = "opacity">
           <div class="input-section">
             <div class="input-sudoku">
               <div id="table">
@@ -842,7 +842,7 @@
               </div>
             </div>
             <div class="solve-buttons">
-              <button class="info-button">Info</button>
+              <button class="info-button" onclick="toggleOpacity()" >Info</button>
               <button class="solve-button" onclick="submitBoard()">
                 Solve
               </button>
@@ -853,10 +853,34 @@
             <div class="output-sudoku"></div>
           </div>
         </div>
+        <div class="how-popup" id="how-popup">
+          <div class="heading-container">
+            <div class="line"></div>
+            <h1 class="heading">How To Use</h1>
+            <div class="line"></div>
+          </div>
+          <div class="how-text-container">
+            <div class="how-to-card">
+              <p><strong>Click to Enter Numbers:</strong> Click on any cell in the Sudoku grid to enter a number from 1 to 9. If you enter a wrong number click on the cell again and backspace.</p>
+              <p><strong>Solve Button:</strong> Click the "Solve" button to automatically solve the Sudoku puzzle.</p>
+              <p><strong>Solved Puzzle Display:</strong> The solved Sudoku puzzle will fade in and appear to the right of the input Sudoku grid.</p>
+              <p><strong>Refresh Button:</strong> Click the "Refresh" button to clear all inputs and reset the Sudoku grid.</p>
+            </div>
+            <button class="cross-button" onclick="toggleOpacity()">+</button>
+          </div>
+          </button>
+        </div>
       </section>
     </div>
 
     <script>
+      function toggleOpacity() {
+        var opacity = document.getElementById("opacity");
+        opacity.classList.toggle("active");
+        var popup = document.getElementById("how-popup");
+        popup.classList.toggle("active");
+      }
+
       function clearBoard() {
         const outputSection = document.querySelector(".output-sudoku");
         outputSection.classList.remove("visible");
