@@ -685,7 +685,7 @@
             </div>
             <div class="solve-buttons">
               <button class="info-button">Info</button>
-              <button class="solve-button" onclick="getInputValues()">
+              <button class="solve-button" onclick="submitBoard()">
                 Solve
               </button>
               <button class="clear-button">Clear</button>
@@ -707,6 +707,24 @@
         });
         console.log(tableArray);
         return tableArray;
+      }
+      function submitBoard() {
+        const tableArray = getInputValues();
+
+        fetch("/solve", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ board: tableArray }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data.solvedBoard);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
       }
       const originalContent = `
   <p><strong>Overall Structure:</strong></p>
