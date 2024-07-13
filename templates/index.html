@@ -684,23 +684,30 @@
               </div>
             </div>
             <div class="solve-buttons">
-              <button class="info-button">
-                Info
-              </button>
-              <button class="solve-button" >
+              <button class="info-button">Info</button>
+              <button class="solve-button" onclick="getInputValues()">
                 Solve
               </button>
-              <button class="clear-button" >
-                Clear
-              </button>
+              <button class="clear-button">Clear</button>
             </div>
           </div>
-          <div class="output-section"></div>
+          <div class="output-section">
+            <div class="output-sudoku"></div>
+          </div>
         </div>
       </section>
     </div>
 
     <script>
+      function getInputValues() {
+        const rows = document.querySelectorAll('tr[id^="row"]');
+        const tableArray = Array.from(rows).map((row) => {
+          const inputs = row.querySelectorAll('input[class^="Input"]');
+          return Array.from(inputs).map((input) => parseInt(input.value) || 0); // Convert to integer, default to 0 if not a number
+        });
+        console.log(tableArray);
+        return tableArray;
+      }
       const originalContent = `
   <p><strong>Overall Structure:</strong></p>
   <ul>
