@@ -2,6 +2,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.times{
+  width: 32px;
+  height: 38px;
+}
+
+
 .manrope-font {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -61,6 +67,10 @@ section {
   right: 20px;
 }
 
+.ny-times-button:hover {
+  background-color: #FFD085;
+}
+
 .nav-buttons {
   height: 130px;
   display: flex;
@@ -81,6 +91,10 @@ section {
   background-color: #fec364;
   border: 3px solid #000;
   box-sizing: border-box;
+}
+
+.up,.down{
+  height: 35px;
 }
 
 .logo-container {
@@ -193,6 +207,41 @@ section {
   background-color: #fec364;
   border: 3px solid #000;
   box-sizing: border-box;
+}
+
+.up-button:hover,
+.down-button:hover,
+.left-button:hover,
+.right-button:hover,
+.info-button:hover,
+.clear-button:hover,
+.solve-button:hover,
+.cross-button:hover {
+  background-color: #FFEBCA;
+}
+
+.left,.right{
+  width: 40px;
+}
+
+.search{
+  width: 65px;
+  height: 70px;
+}
+
+.clear{
+  width: 45px;
+  height: 50px;
+}
+
+.info{
+  width: 15px;
+  height: 40px;
+}
+
+.cross{
+  width: 25px;
+  height: 25px;
 }
 
 .solver-card {
@@ -369,4 +418,9 @@ input {
   background-color: #fec364;
   border: 3px solid #000;
   box-sizing: border-box;
+}
+
+.action-button.clicked {
+  box-shadow: none;
+  background-color: black;
 }
