@@ -15,19 +15,38 @@
       type="text/css"
       href="{{ url_for('static', filename='styles/index.css') }}"
     />
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
   </head>
   <body>
-    <button class="ny-times-button">Logo</button>
+    <button class="action-button ny-times-button">
+      <img
+              class="times logo"
+              src="{{ url_for('static', filename = 'images/times.png') }}"
+              alt="Times Logo"
+            />
+    </button>
     <div class="nav-buttons">
-      <button class="up-button">Up</button>
-      <button class="down-button">Down</button>
+      <button class="action-button up-button">
+        <img
+              class="up logo"
+              src="{{ url_for('static', filename = 'images/up.png') }}"
+              alt="up Logo"
+            />
+      </button>
+      <button class="action-button down-button">
+        <img
+              class="down logo"
+              src="{{ url_for('static', filename = 'images/down.png') }}"
+              alt="down Logo"
+            />
+      </button>
     </div>
     <div class="web-container">
       <section id="landing-page" class="landing-page">
         <div class="content">
           <div class="logo-container">
             <img
-              class="logo"
+              class="sudo"
               src="{{ url_for('static', filename = 'images/logo.png') }}"
               alt="Sudolution Logo"
             />
@@ -75,11 +94,17 @@
                 />
               </div>
               <div class="buttons-container">
-                <button class="left-button" onclick="showOriginalContent()">
-                  Left
+                <button class="action-button left-button" onclick="showOriginalContent()">
+                    <img
+                class="left logo"
+                src="{{ url_for('static', filename = 'images/left.png') }}"
+                alt="left Logo"/>
                 </button>
-                <button class="right-button" onclick="showNewContent()">
-                  Right
+                <button class="action-button right-button" onclick="showNewContent()">
+                  <img
+                class="right logo"
+                src="{{ url_for('static', filename = 'images/right.png') }}"
+                alt="right Logo"/>
                 </button>
               </div>
             </div>
@@ -842,11 +867,24 @@
               </div>
             </div>
             <div class="solve-buttons">
-              <button class="info-button" onclick="toggleOpacity()" >Info</button>
-              <button class="solve-button" onclick="submitBoard()">
-                Solve
+              <button class="action-button info-button" onclick="toggleOpacity()" >
+                <img
+                class="info logo"
+                src="{{ url_for('static', filename = 'images/i.png') }}"
+                alt="i Logo"/>
               </button>
-              <button class="clear-button" onclick="clearBoard()">Clear</button>
+              <button class="action-button solve-button" onclick="submitBoard()">
+                <img
+                class="search logo"
+                src="{{ url_for('static', filename = 'images/search.png') }}"
+                alt="search Logo"/>
+              </button>
+              <button class="action-button clear-button" onclick="clearBoard()">
+                <img
+                class="clear logo"
+                src="{{ url_for('static', filename = 'images/clear.png') }}"
+                alt="clear Logo"/>
+              </button>
             </div>
           </div>
           <div class="output-section">
@@ -866,14 +904,66 @@
               <p><strong>Solved Puzzle Display:</strong> The solved Sudoku puzzle will fade in and appear to the right of the input Sudoku grid.</p>
               <p><strong>Refresh Button:</strong> Click the "Refresh" button to clear all inputs and reset the Sudoku grid.</p>
             </div>
-            <button class="cross-button" onclick="toggleOpacity()">+</button>
+            <button class="action-button cross-button" onclick="toggleOpacity()">
+              <img
+              class="cross logo"
+              src="{{ url_for('static', filename = 'images/cross.png') }}"
+              alt="Cross Logo"/>
+            </button>
           </div>
-          </button>
         </div>
       </section>
     </div>
 
     <script>
+      document.querySelectorAll('.action-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const logo = this.querySelector('.logo');
+          const originalSrc = logo.dataset.originalSrc || logo.src;
+          const newSrc = logo.dataset.newSrc;
+      
+          if (!newSrc) {
+            if (originalSrc.includes('up.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/up2.png') }}";
+            } else if (originalSrc.includes('down.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/down2.png') }}";
+            } else if (originalSrc.includes('left.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/left2.png') }}";
+            } else if (originalSrc.includes('right.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/right2.png') }}";
+            } else if (originalSrc.includes('i.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/i2.png') }}";
+            } else if (originalSrc.includes('search.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/search2.png') }}";
+            } else if (originalSrc.includes('clear.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/clear2.png') }}";
+            } else if (originalSrc.includes('cross.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/cross2.png') }}";
+            } else if (originalSrc.includes('times.png')) {
+              logo.dataset.newSrc = "{{ url_for('static', filename = 'images/times2.png') }}";
+            }
+          }
+      
+          if (logo.src === originalSrc) {
+            logo.src = logo.dataset.newSrc;
+          } else {
+            logo.src = originalSrc;
+          }
+      
+          this.classList.add('clicked');
+      
+          setTimeout(() => {
+            this.classList.remove('clicked');
+            logo.src = originalSrc; 
+          }, 200);
+      
+          logo.dataset.originalSrc = originalSrc;
+        });
+      });
+      
+      
+
+
       function toggleOpacity() {
         var opacity = document.getElementById("opacity");
         opacity.classList.toggle("active");
