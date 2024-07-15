@@ -18,13 +18,15 @@
     <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
   </head>
   <body>
-    <button class="action-button ny-times-button">
-      <img
-              class="times logo"
-              src="{{ url_for('static', filename = 'images/times.png') }}"
-              alt="Times Logo"
-            />
-    </button>
+    <a href="https://www.nytimes.com/puzzles/sudoku" target="_blank">
+      <button class="action-button ny-times-button">
+        <img
+          class="times logo"
+          src="{{ url_for('static', filename='images/times.png') }}"
+          alt="Times Logo"
+        />
+      </button>
+    </a>    
     <div class="nav-buttons">
       <button class="action-button up-button">
         <img
@@ -1021,27 +1023,26 @@
 
       function displaySolvedBoard(solvedBoard) {
         const outputSection = document.querySelector(".output-sudoku");
-        outputSection.innerHTML = ""; // Clear previous output
-
+        outputSection.innerHTML = ""; 
         const table = document.createElement("table");
-        table.id = "solved-table"; // Unique ID for the table
+        table.id = "solved-table"; 
 
         const rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
 
         for (let i = 0; i < 9; i++) {
           const row = document.createElement("tr");
-          row.id = `solved-row${i + 1}`; // Unique ID for each row
+          row.id = `solved-row${i + 1}`; 
 
           for (let j = 0; j < 9; j++) {
             const cell = document.createElement("td");
-            cell.id = `cell-${rows[i]}${j + 1}`; // Use 'cell-' for consistency
+            cell.id = `cell-${rows[i]}${j + 1}`; 
 
             const input = document.createElement("input");
-            input.value = solvedBoard[i][j] || ""; // Set the solved value
+            input.value = solvedBoard[i][j] || ""; 
             input.className = `Input row${i + 1} col${j + 1} grid${
               Math.floor(j / 3) + Math.floor(i / 3) * 3 + 1
             }`;
-            input.setAttribute("readonly", true); // Make the input non-editable
+            input.setAttribute("readonly", true); 
 
             cell.appendChild(input);
             row.appendChild(cell);
